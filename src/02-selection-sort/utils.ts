@@ -1,3 +1,4 @@
+// function will used in different array sort tests
 export default (fn: Function) => {
   describe('Selection sort testing', () => {
     test('[5, 7, 9, 2] should be sorted to [2, 5, 7, 9]', () => {
