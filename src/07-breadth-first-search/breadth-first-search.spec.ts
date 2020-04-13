@@ -11,10 +11,14 @@ const graph = {
   jonny: [],
 };
 
-const targetFunction = (name: string): boolean => name[name.length - 1] === 'm';
+const endsWithM = (name: string): boolean => name.endsWith('m');
+const containsGG = (name: string): boolean => name.includes('gg');
 
 describe('Breadth first search testing', () => {
-  test('Target function (name ends in m) should find "thom" in graph', () => {
-    expect(breadthFirstSearch('you', graph, targetFunction)).toBe('thom');
+  test('Target function (name ends in "m") should find "thom" in graph', () => {
+    expect(breadthFirstSearch('you', graph, endsWithM)).toBe('thom');
+  });
+  test('Target function (name contains "gg") should find "peggy" in graph', () => {
+    expect(breadthFirstSearch('you', graph, containsGG)).toBe('peggy');
   });
 });
