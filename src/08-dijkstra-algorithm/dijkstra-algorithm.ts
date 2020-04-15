@@ -10,23 +10,18 @@ export interface Parents {
   [key: string]: string | null;
 }
 
-type NodeCost = {node: string | null; cost: number};
+export interface NodeCost {
+  node: string | null;
+  cost: number
+}
 
 export default (graph: Graph, costs: Ribs, parents: Parents): Ribs => {
   const processed: string[] = [];
 
-  const getLowestCostNode = (ribsCosts: Ribs): NodeCost => {
-    const accumulator: NodeCost = { node: null, cost: Infinity };
-
-    const { node, cost } = Object.entries(ribsCosts).reduce((acc, [key, rate]) => {
-      if (rate < acc.cost && !processed.includes(key)) {
-        return { node: key, cost: rate };
-      }
-      return acc;
-    }, accumulator);
-
-    return { node, cost };
-  };
+  const getLowestCostNode = (ribsCosts: Ribs): NodeCost => Object
+    .entries(ribsCosts).reduce((acc, [key, rate]) => (rate < acc.cost && !processed.includes(key)
+      ? { node: key, cost: rate }
+      : acc), { node: null, cost: Infinity } as NodeCost);
 
   let { node, cost } = getLowestCostNode(costs);
   while (node) {
