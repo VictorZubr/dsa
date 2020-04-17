@@ -26,7 +26,7 @@ export default (graph: Graph, costs: Ribs, parents: Parents): Ribs => {
   let { node, cost } = getLowestCostNode(costs);
   while (node) {
     const neighbors = graph[node];
-    // TODO refactor function to resolve ESLint problem
+    // TODO refactor of function to resolve ESLint problem
     // eslint-disable-next-line no-loop-func
     Object.keys(neighbors).forEach((key) => {
       const newCost = cost + neighbors[key];

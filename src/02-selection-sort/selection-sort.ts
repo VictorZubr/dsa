@@ -1,16 +1,6 @@
-const getSmallestIndex = (arr: number[]): number => {
-  let smallestIndex: number = 0;
-  let smallestItem: number = arr[smallestIndex];
-
-  for (let i: number = 1; i < arr.length; i += 1) {
-    if (arr[i] < smallestItem) {
-      smallestItem = arr[i];
-      smallestIndex = i;
-    }
-  }
-
-  return smallestIndex;
-};
+const getSmallestIndex = (arr: number[]): number => arr.reduce((acc, item, index) => (
+  item < acc.smallestItem ? { smallestItem: item, smallestIndex: index } : acc
+), { smallestItem: arr[0], smallestIndex: 0 }).smallestIndex;
 
 export default (arr: number[]): number[] => {
   const sortedArray: number[] = [];
