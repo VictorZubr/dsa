@@ -15,10 +15,10 @@ export interface NodeCost {
   cost: number
 }
 
-const getLowestCostNode = (ribsCosts: Ribs, processed: string[]): NodeCost => Object
-  .entries(ribsCosts).reduce((acc, [key, rate]) => (rate < acc.cost && !processed.includes(key)
-    ? { node: key, cost: rate }
-    : acc), { node: null, cost: Infinity } as NodeCost);
+const getLowestCostNode = (ribs: Ribs, processed: string[]): NodeCost => Object.entries(ribs)
+  .reduce((acc, [key, rate]) => (
+    rate < acc.cost && !processed.includes(key) ? { node: key, cost: rate } : acc
+  ), { node: null, cost: Infinity } as NodeCost);
 
 const getNewCostsAndParents = (
   node: string,
