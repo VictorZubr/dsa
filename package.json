@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "eslint": "eslint --ext .ts, ./",
-    "test": "npm run eslint"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
