@@ -1,11 +1,9 @@
 import { sumArray, recursiveSumArray, reducedSumArray } from './sum-array';
+import { Test } from '../../defs/test';
 
-interface Test {
-  name: string;
-  fn: (arr: number[]) => number;
-}
+type Sum = (arr: number[]) => number;
 
-const tests: Test[] = [
+const tests: Array<Test<Sum>> = [
   { name: 'for operator', fn: sumArray },
   { name: 'recursive', fn: recursiveSumArray },
   { name: 'reduce array method', fn: reducedSumArray },
