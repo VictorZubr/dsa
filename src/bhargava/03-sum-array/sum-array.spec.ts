@@ -1,9 +1,9 @@
 import { sumArray, recursiveSumArray, reducedSumArray } from './sum-array';
-import { Test } from '../../defs/test';
+import { TestItem } from '../../defs/test-item';
 
 type Sum = (arr: number[]) => number;
 
-const tests: Array<Test<Sum>> = [
+const tests: Array<TestItem<Sum>> = [
   { name: 'for operator', fn: sumArray },
   { name: 'recursive', fn: recursiveSumArray },
   { name: 'reduce array method', fn: reducedSumArray },

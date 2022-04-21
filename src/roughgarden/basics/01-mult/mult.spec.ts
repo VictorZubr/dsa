@@ -1,9 +1,9 @@
-import { Test } from '../../../defs/test';
+import { TestItem } from '../../../defs/test-item';
 import multByColumn from './mult-by-column';
 
 type Mult = (x: number, y: number) => number;
 
-const tests: Array<Test<Mult>> = [
+const tests: Array<TestItem<Mult>> = [
   { name: 'Mult by column', fn: multByColumn },
 ];
 

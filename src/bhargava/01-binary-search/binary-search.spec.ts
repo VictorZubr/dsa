@@ -1,9 +1,9 @@
 import { binarySearch, recursiveBinarySearch } from './binary-search';
-import { Test } from '../../defs/test';
+import { TestItem } from '../../defs/test-item';
 
 type SearchFunction = (arr: number[], item: number, left?: number, right?: number) => number;
 
-const tests: Array<Test<SearchFunction>> = [
+const tests: Array<TestItem<SearchFunction>> = [
   { name: 'for operator', fn: binarySearch },
   { name: 'recursive', fn: recursiveBinarySearch },
 ];
