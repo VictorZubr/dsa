@@ -1,10 +1,12 @@
 import { TestItem } from '../../../defs/test-item';
 import multByColumn from './mult-by-column';
+import recIntMult from './rec-int-mult';
 
 type Mult = (x: number, y: number) => number;
 
 const tests: Array<TestItem<Mult>> = [
   { name: 'Mult by column', fn: multByColumn },
+  { name: 'Recursive integer multiplication', fn: recIntMult },
 ];
 
 tests.forEach((kit) => {
