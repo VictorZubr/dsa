@@ -10,5 +10,14 @@ export default (fn: Function) => {
     test('[-1, 120, 15, -7] should be [-7, -1, 15, 120]', () => {
       expect(fn([-1, 120, 15, -7])).toEqual([-7, -1, 15, 120]);
     });
+    test('[5, 7, 9, 2, 18] should be sorted to [2, 5, 7, 9, 18]', () => {
+      expect(fn([5, 7, 9, 2, 18])).toEqual([2, 5, 7, 9, 18]);
+    });
+    test('[] should be sorted to []', () => {
+      expect(fn([])).toEqual([]);
+    });
+    test('[1] should be sorted to [1]', () => {
+      expect(fn([1])).toEqual([1]);
+    });
   });
 };
