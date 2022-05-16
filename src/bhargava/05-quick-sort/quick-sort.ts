@@ -1,12 +1,9 @@
 const splitByPivot = (arr: number[], pivot: number): [number[], number[]] => arr
-  .reduce((acc: [number[], number[]], item) => {
-    if (item > pivot) {
-      acc[1].push(item);
-    } else {
-      acc[0].push(item);
-    }
+  .reduce(([smallerItems, greaterItems], item) => {
+    const goalArray: number[] = item > pivot ? greaterItems : smallerItems;
+    goalArray.push(item);
 
-    return acc;
+    return [smallerItems, greaterItems];
   }, [[], []]);
 
 // eslint-disable-next-line import/prefer-default-export
