@@ -19,5 +19,8 @@ export default (fn: Function) => {
     test('[1] should be sorted to [1]', () => {
       expect(fn([1])).toEqual([1]);
     });
+    test('[5, 7, 9, 2, 18, -20, 0, -1, 105, 1, 2] should be sorted to [-20, -1, 0, 1, 2, 2, 5, 7, 9, 18, 105]', () => {
+      expect(fn([5, 7, 9, 2, 18, -20, 0, -1, 105, 1, 2])).toEqual([-20, -1, 0, 1, 2, 2, 5, 7, 9, 18, 105]);
+    });
   });
 };

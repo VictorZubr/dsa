@@ -6,7 +6,7 @@ const merge = (arrC: Array<number>, arrD: Array<number>): Array<number> => {
   return Array.from(
     { length: arrC.length + arrD.length },
     // eslint-disable-next-line no-plusplus
-    (): number => ((arrC[i] || Infinity) < (arrD[j] || Infinity) ? arrC[i++] : arrD[j++]),
+    (): number => ((arrC[i] ?? Infinity) < (arrD[j] ?? Infinity) ? arrC[i++] : arrD[j++]),
 
     // Это валидный для линтера код, но я выбрал запись в одну строчку с отключением линтера
     /* (): number => {
